@@ -12,5 +12,26 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(successResponse => {
-    console.log('Success')
+    console.log('Success');
+    successResponse.data.topics.forEach(item => {
+        const newTopic = document.createElement('div')
+        newTopic.classList.add('tab')
+        newTopic.textContent = item
+        let Top =  document.querySelector('.topics')
+        Top.append(newTopic)
+
+    })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
