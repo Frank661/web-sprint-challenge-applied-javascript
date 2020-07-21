@@ -55,9 +55,7 @@ function articles(obj){
     
     spanOne.textContent = obj.authorName
 
-    divTwo.addEventListener("click", () =>{
-        console.log(obj.headline)
-    })
+  
 
     divOne.append(divTwo,divThree)
     divThree.append(divFour)
@@ -65,10 +63,15 @@ function articles(obj){
     divThree.append(spanOne)
 
     
-    
+    divTwo.addEventListener("click", () =>{
+        console.log(obj.headline)
+        alert(obj.headline)
+    })
 
     return divOne
 
 }
+
+
 
 

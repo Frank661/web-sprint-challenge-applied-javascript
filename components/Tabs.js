@@ -21,8 +21,13 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
         Top.append(newTopic)
 
     })
+
+
 })
 
+// .catch((errorResponse)=>{
+//     alert('ERRROOORRR')
+// })
 
 
 
