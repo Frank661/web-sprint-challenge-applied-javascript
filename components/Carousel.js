@@ -22,3 +22,53 @@
     <div class="right-button"> > </div>
   </div>
 */
+const imgArray = [
+  "assets/carousel/mountains.jpeg",
+  "assets/carousel/computer.jpeg",
+  "assets/carousel/trees.jpeg",
+  "assets/carousel/turntable.jpeg"
+];
+
+
+function carousel() {
+	
+	let index = 0;
+
+	const carouselDiv = document.createElement("div");
+	const leftButton = document.createElement("div");
+	const img = document.createElement("img");
+	const rightButton = document.createElement("div");
+
+
+	carouselDiv.classList.add("carousel");
+	leftButton.classList.add("left-button");
+	rightButton.classList.add("right-button");
+
+
+	leftButton.textContent = `<-`;
+	img.src = `${imgArray[0]}`;
+	rightButton.textContent = `->`;
+
+  carouselDiv.append(leftButton,img,rightButton)
+
+	const carouselContainer = document.querySelector(".carousel-container");
+
+	carouselContainer.append(carouselDiv);
+
+	leftButton.addEventListener("click", () => {
+		if (index < 3) {
+			index++;
+			img.src =`${imgArray[index]}`;
+		}
+	});
+	rightButton.addEventListener("click", () => {
+		if (index > 0) {
+			index--;
+			img.src = `${imgArray[index]}`;
+		}
+	});
+
+	console.log(carouselDiv);
+}
+
+carousel();
